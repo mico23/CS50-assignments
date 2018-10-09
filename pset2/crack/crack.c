@@ -7,9 +7,10 @@
 #include <string.h>
 #include <ctype.h>
 #include <cs50.h>
-#define _XOPEN_SOURCE       /* See feature_test_macros(7) */
-#include <unistd.h>
 #define PW_SIZE 6
+//learned this trick from "https://gist.github.com/hugoribeiros/c158ff085bf0aace02c577b7b345bf1e"
+//listing all the possible alphabets significantly shortens the length of codes
+//instead of using nested for loops to find all combinations of the alphabets
 #define WORDS "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 char *crypt(const char *key, const char *salt);
@@ -40,6 +41,8 @@ int main(int argc, string argv[])
             {
                 //use break here; it does not end the outside for loop.
                 //use 'goto' instead.
+                //learned this trick from "https://gist.github.com/hugoribeiros/c158ff085bf0aace02c577b7b345bf1e"
+                //***this avoids running all other possible combinations after finding the PW.
                 goto result;
             }
         }
@@ -152,7 +155,8 @@ int main(int argc, string argv[])
         }
         else
         {
-            result: printf("password: %s\n", cracked_password);
+result:
+            printf("password: %s\n", cracked_password);
         }
 
         return 0;
