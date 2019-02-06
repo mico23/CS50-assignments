@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <h3 class="text-center">{{top}}</h3>
+
+    <div>
+      <table class="border form-control table">
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Shares Owned</th>
+          <th>Price</th>
+          <th>Total Value</th>
+        </tr>
+
+        <!-- insert a for loop here? -->
+        {% for symbol, name, shares, price, total_value in shares_summary %}
+        <tr>
+          <td>{{symbol}}</td>
+          <td>{{name}}</td>
+          <td>{{shares}}</td>
+          <td>{{price}}</td>
+          <td>{{total_value}}</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+          <td>Total Cash</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{cash}}</td>
+        </tr>
+
+        <tr>
+          <td>Grand Total</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{grand_total}}</td>
+        </tr>
+      </table>
+    </div>
+{% endblock %}

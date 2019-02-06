@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <!-- *** Do no forget to change the "action" attribute *** -->
+    <!--
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock Symbol" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    -->
+
+    <h3 class="text-center">{{top}}</h3>
+
+    <div>
+      <table class="border form-control table">
+        <tr>
+          <th>Stock Name</th>
+          <th>Price</th>
+          <th>Symbol</th>
+        </tr>
+        <!-- insert a for loop here? -->
+        <tr>
+          <td>{{name}}</td>
+          <td>{{price}}</td>
+          <td>{{symbol}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <button class="btn btn-primary" onClick="window.history.back()">Go back</button>
+{% endblock %}

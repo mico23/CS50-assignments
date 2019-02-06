@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <!-- *** Do no forget to change the "action" attribute *** -->
+    <form action="/buy" method="post">
+        <h3 class="text-center">Balance: {{balance}}</h3>
+    <!--    <h2 class="text-center">Symbol: {{symbol}}  Shares Bought: {{shares}}</h3>    -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock Symbol" type="text"/>
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Number of Shares" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}
